@@ -14,15 +14,10 @@ app.get("/", function(req, res){
       const weatherData = JSON.parse(data);
       const temp = weatherData.main.temp;
       const description = weatherData.weather[0].description;
-      console.log(temp);
-      console.log(description);
+      res.send("The temperatur ein London is " + temp + " degrees Celsius.");
     });
-
   });
-
-
-
-  res.send("The server is up and running.")
+  // res.send("The server is up and running.")
 });
 
 
