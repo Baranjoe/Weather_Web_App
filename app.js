@@ -14,8 +14,12 @@ app.get("/", function(req, res){
       const weatherData = JSON.parse(data);
       const temp = weatherData.main.temp;
       const description = weatherData.weather[0].description;
+      const icon = weatherData.weather[0].icon;
+      const imgURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+
       res.write("<h1>The temperatur ein London is " + temp + " degrees Celsius.</h1>");
-      res.write("<h1>The waether is currently " + description +"</h1>");
+      res.write("<h1>The waether is currently " + description +".</h1>");
+      res.write("<img src='imgURL' alt='Weather Image'>");
       res.send();
     });
   });
