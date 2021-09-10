@@ -20,7 +20,7 @@ app.get("/", function(req, res){
       console.log(imgURL);
       res.write("<h1>The temperatur ein London is " + temp + " degrees Celsius.</h1>");
       res.write("<h1>The waether is currently " + description +".</h1>");
-      res.write("<img src='imgURL' alt='Weather Image'>");
+      res.write("<img src=" + imgURL + " alt='Weather Image'>");
       res.send();
     });
   });
