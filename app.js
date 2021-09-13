@@ -10,7 +10,7 @@ app.get("/", function(req, res){
   res.sendFile(__dirname + "/index.html");
 });
 
-app.post("/", function(re, res) {
+app.post("/", function(req, res) {
   console.log(req.body.cityName);
 });
 
