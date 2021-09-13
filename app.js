@@ -1,14 +1,17 @@
 const express = require("express");
 const https = require("https");
+const bodyParser = require("body-parser");
 
 const app = express();
+
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req, res){
   res.sendFile(__dirname + "/index.html");
 });
 
 app.post("/", function(re, res) {
-  console.log("Post received");
+  console.log(req.body.cityName);
 });
 
 // const query = "London";
